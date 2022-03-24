@@ -11,6 +11,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        $this->call([
+            UsersTableSeeder::class,
+            TweetsTableSeeder::class,
+            CommentsTableSeeder::class,
+            FavoritesTableSeeder::class,
+            FollowersTableSeeder::class,
+        ]);
     }
 }
+
+/*$this->call()の中で上から順に実行されるため
+この並びでないとテーブルの親子関係上エラーになる*/
