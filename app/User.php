@@ -2,9 +2,11 @@
 
 namespace App;
 
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
+
+
 
 class User extends Authenticatable
 {
@@ -16,24 +18,28 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'screen_name',
+        'name',
+        'profile_image',
+        'email',
+        'password'
     ];
+    
+    /* relation */
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
+    public function followers()
+    {
+        return $this->belongsToMany(self::class, 'followers', 'followed_id', 'following_id');
+    }
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function follows()
+    {
+        return $this->belongsToMany(self::class, 'followers', 'following_id', 'followed_id');
+    }    
 }
+
+/**
+screen_nameとprofile_imageを追加したので、
+登録/更新を許可するために$fillableの配列にカラムを指定
+*/
+
