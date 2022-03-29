@@ -1,11 +1,11 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Storage;
 
 
 class User extends Authenticatable
@@ -73,5 +73,46 @@ class User extends Authenticatable
     //followersの中に、(where)カラム名, 値、'following_id'に $user_idがあるかどうか
     //firstで該当するデータを1つだけ持ってくる
     
-}
+    
+    
+    /*
+    $paramsの中に画像があれば処理を分ける。
+    $file_name = $params...
+    で画像ファイルが/storage/app/public/profile_image/に保存される。
+    */
+    
+    
+    
+    public function updateProfile(Array $params)
+    {
+        if (isset($params['profile_image'])) {
+            $file_name = $params['profile_image'];//->store('public/profile_image/');
+            
+            //s3アップロード開始
+            $image = $file_name;
+            //$request->file('image');
+            
+            // バケットの`myprefix`フォルダへアップロード
+            $path = Storage::disk('s3')->putFile('myprefix', $image, 'public');
+      
+            $this::where('id', $this->id)
+                ->update([
+                    'screen_name'   => $params['screen_name'],
+                    'name'          => $params['name'],
+                    'profile_image' => Storage::disk('s3')->url($path),
+                    'email'         => $params['email'],
+                ]);
+        } else {
+            $this::where('id', $this->id)
+                ->update([
+                    'screen_name'   => $params['screen_name'],
+                    'name'          => $params['name'],
+                    'email'         => $params['email'],
+                ]); 
+        }
 
+        return;
+    }    
+    
+    
+}
