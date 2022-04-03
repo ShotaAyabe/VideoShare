@@ -69,6 +69,7 @@ class Tweet extends Model
     public function tweetStore(Int $user_id, Array $data)
     {
         $this->user_id = $user_id;
+        $this->url = $data['url'];
         $this->text = $data['text'];
         $this->save();
 

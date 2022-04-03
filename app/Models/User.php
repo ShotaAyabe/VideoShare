@@ -41,7 +41,7 @@ class User extends Authenticatable
     ユーザを1ページにつき5名取得*/
         public function getAllUsers(Int $user_id)
     {
-        return $this->Where('id', '<>', $user_id)->paginate(5);
+        return $this->Where('id', '<>', $user_id)->paginate(7);
     }
     
     // フォローする

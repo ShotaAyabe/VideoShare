@@ -1,11 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
+
+
+
+
 <div class="container">
     <div class="row justify-content-center">
         
-        
-        
+ <!--動画-->
+                               
         
         @if (isset($timelines))
             @foreach ($timelines as $timeline)
@@ -22,9 +26,55 @@
                                 <p class="mb-0 text-secondary">{{ $timeline->created_at->format('Y-m-d H:i') }}</p>
                             </div>
                         </div>
+                        
+                        
+                        
                         <div class="card-body">
+
+ {{--                        
+                            <a href="{{ $timeline->url }}">
+                            {!! nl2br(e($timeline->url)) !!}
+                            </a>
+--}}
+                            
+                            <a href="" class="card card-w-image rounded-0 open-player disabled" data-url="{{ $timeline->url }}" data-start="0" data-end="11812" data-fname="scare jump ur whalecome" style="margin-bottom: 10px;">
+                                <div class="row no-gutters">
+                                    <div class="col-4 col-md-2">
+                                        <!--サムネ-->
+                                        <div class="card-thumbnail">
+                                            <img src="" class="img-fluid" alt="glad you know she’s a lady of culture" style="padding: 3px;">
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="col-8 col-md-10">
+                                        <div class="card-body">
+                                         <!--タイトル-->
+                                            <h3 class="card-heading mb0" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">ヒカキン</h3>
+                                        <!--チャンネル名にしたい-->
+                                            <div class="card-author text-muted" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HORROR GAME TIME BABY | The Convenience Store &quot;Full Vod&quot;</div>
+                                        <!--日時-->    
+                                            <div class="card-author text-muted">
+                                                <i class="fa fa-clock-o m-r-xs"></i>
+                                                 2021年10月12日
+                                            </div>
+                                            
+                                        </div>
+                        
+                                    </div>
+                                </div>
+                            </a>
+                                                    
+                            <br>
+
+
+
+
+
                             {!! nl2br(e($timeline->text)) !!}
                         </div>
+                        
+                        
+                        
                         <div class="card-footer py-1 d-flex justify-content-end bg-white">
                             @if ($timeline->user->id === Auth::user()->id)
                                 <div class="dropdown mr-3 d-flex align-items-center">
@@ -77,5 +127,30 @@
     <div class="my-4 d-flex justify-content-center">
         {{ $timelines->links() }}
     </div>
+    
+<!--　必要だった部分　-->
+    
+<!--　動画プレイヤーの部分　-->
+        <div class="player">
+            <!-- プレイヤー部分 -->
+            <div id="youtube" class="iframe"></div>
+            
+            <!-- 動画の閉じるボタン -->
+            <div class="controller">
+                <div class="close-player" title="プレイヤーを閉じる">
+                    <i class="fa fa-2x fa-times-circle"></i>
+                </div>
+            </div>
+            
+            <!-- なくても良さそう -->
+            <!--<div class="reclist"></div>-->
+        </div>
 </div>
+
+    
+<script src="https://text.aimaker.io/assets/js/lp/jquery-3.3.1.min.js"></script>
+
+
+    
+
 @endsection

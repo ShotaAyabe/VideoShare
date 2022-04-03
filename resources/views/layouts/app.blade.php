@@ -11,13 +11,28 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('js/main.js') }}"></script>
+        
 
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+
+        <link rel="stylesheet" href="https://text.aimaker.io/assets/plugins/fontawesome/css/font-awesome.css"/>
+
+ {{--
+        <link rel="stylesheet" href="https://text.aimaker.io/assets/css/lp/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://text.aimaker.io/assets/css/customize/swiper.min.css"/>
+--}}   
+
+
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/player.style.css') }}" rel="stylesheet">
+        
+        
         <!-- Font Awesome -->
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     </head>
@@ -55,9 +70,11 @@
 
                                 <li class="nav-item mr-5">
 
-                                    <a href="{{ url('tweets') }}">タイムライン<i class="fas fa-list" class="fa-fw"></i> </a>
+
+                                    <a class="appbutton" href="{{ url('tweets') }}">タイムライン<i class="fas fa-list" class="fa-fw"></i> </a>
             
-                                    <a href="{{ url('users') }}">全ユーザー<i class="fas fa-users" class="fa-fw"></i> </a>
+                                    <a class="appbutton" href="{{ url('users') }}">全ユーザー<i class="fas fa-users" class="fa-fw"></i> </a>
+
 
                                     <a href="{{ url('tweets/create') }}" class="btn btn-md btn-primary">ツイートする</a>
                                 </li>
@@ -94,4 +111,5 @@
             </main>
         </div>
     </body>
+    
 </html>

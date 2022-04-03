@@ -20,7 +20,11 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
+                               
+                                <textarea class="form-control @error('url') is-invalid @enderror" name="url" required autocomplete="url" rows="1">{{ old('url') }}</textarea>
+                               
                                 <textarea class="form-control @error('text') is-invalid @enderror" name="text" required autocomplete="text" rows="4">{{ old('text') }}</textarea>
+
 
                                 @error('text')
                                     <span class="invalid-feedback" role="alert">
