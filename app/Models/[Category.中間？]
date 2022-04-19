@@ -1,0 +1,44 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+
+ /*relation*/
+ 
+ 
+//  public function tweetStore(Int $user_id, Array $data)
+//     {
+//         $this->user_id = $user_id;
+//         $this->url = $data['url'];
+//         $this->text = $data['text'];
+//         $this->save();
+
+//         return;
+//     }
+ 
+class Category extends Model
+{
+    // DBに保存する処理*/
+    
+    public function categoryStore(Int $tweet_id, $category_name_id, $category_detail_id, Array $data)
+    {
+        
+        $this->tweet_id = $tweet_id;
+        $this->category_name_id = $category_name_id;
+        $this->category_detail_id = $category_detail_id;
+        
+        $this->category_detail_id = $;
+        $this->save();
+        
+
+        return;
+    }
+
+}
+
+        // $category_name = $category_name->getCategory_names($category_name->id);
+        // $category_detail = $category_detail->getCategory_details($category_detail->id);
+// 上のは例。しっかり書き換える。
+    //$comments = $comment->getComments($tweet->id);
