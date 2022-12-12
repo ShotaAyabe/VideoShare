@@ -42,20 +42,20 @@
                                     <div class="col-4 col-md-2">
                                         <!--サムネ-->
                                         <div class="card-thumbnail">
-                                            <img src="" class="img-fluid" alt="glad you know she’s a lady of culture" style="padding: 3px;">
+                                            <img src="" class="img-fluid" alt="" style="padding: 3px;">
                                         </div>
                                         
                                     </div>
                                     <div class="col-8 col-md-10">
                                         <div class="card-body">
                                          <!--タイトル-->
-                                            <h3 class="card-heading mb0" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">ヒカキン</h3>
+                                            <h3 class="card-heading mb0" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">YouTubeテーマソング／ヒカキン＆セイキン</h3>
                                         <!--チャンネル名にしたい-->
-                                            <div class="card-author text-muted" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HORROR GAME TIME BABY | The Convenience Store &quot;Full Vod&quot;</div>
+                                            <div class="card-author text-muted" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HikakinTV</div>
                                         <!--日時-->    
                                             <div class="card-author text-muted">
                                                 <i class="fa fa-clock-o m-r-xs"></i>
-                                                 2021年10月12日
+                                                2015/08/14
                                             </div>
                                             
                                         </div>
