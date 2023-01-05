@@ -27,7 +27,7 @@
                             <a href="" class="card card-w-image rounded-0 open-player disabled" data-url="{{ $timeline->url }}" data-start="0" data-end="11812" data-fname="scare jump ur whalecome" style="margin-bottom: 10px;">
                                 <div class="row no-gutters">
                                     <div class="col-4 col-md-2">
-                                        <!--サムネ-->
+                                        <!--サムネイルを表示する-->
                                         <div class="card-thumbnail">
                                             <img src="" class="img-fluid" alt="" style="padding: 3px;">
                                         </div>
