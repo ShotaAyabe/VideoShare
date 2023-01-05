@@ -38,7 +38,7 @@
                                             <h3 class="card-heading mb0" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">YouTubeテーマソング／ヒカキン＆セイキン</h3>
                                         <!--チャンネル名を表示させたい-->
                                             <div class="card-author text-muted" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HikakinTV</div>
-                                        <!--投稿日時を表示-->    
+                                        <!--投稿日時を表示する-->    
                                             <div class="card-author text-muted">
                                                 <i class="fa fa-clock-o m-r-xs"></i>
                                                 2015/08/14
