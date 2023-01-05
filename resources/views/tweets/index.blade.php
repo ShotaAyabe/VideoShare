@@ -36,7 +36,7 @@
                                         <div class="card-body">
                                          <!--タイトル-->
                                             <h3 class="card-heading mb0" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">YouTubeテーマソング／ヒカキン＆セイキン</h3>
-                                        <!--チャンネル名にしたい-->
+                                        <!--チャンネル名を表示させたい-->
                                             <div class="card-author text-muted" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HikakinTV</div>
                                         <!--日時-->    
                                             <div class="card-author text-muted">
