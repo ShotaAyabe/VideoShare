@@ -1,6 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8 mb-3">
@@ -20,11 +20,9 @@
                                     <a href="{{ url('users/' .$user->id .'/edit') }}" class="btn btn-primary">プロフィールを編集する</a>
                                 @else
                                     @if ($is_following)
-                                    
                                         <form action="/users/{{$user->id}}/unfollow" method="POST">
                                             {{ csrf_field() }}
                                             {{ method_field('DELETE') }}
-
                                             <button type="submit" class="btn btn-danger">フォロー解除</button>
                                         </form>
                                     @else
@@ -34,7 +32,6 @@
                                             <button type="submit" class="btn btn-primary">フォローする</button>
                                         </form>
                                     @endif
-
                                     @if ($is_followed)
                                         <span class="mt-2 px-1 bg-secondary text-light">フォローされています</span>
                                     @endif
@@ -86,15 +83,12 @@
                                         <form method="POST" action="{{ url('tweets/' .$timeline->id) }}" class="mb-0">
                                             @csrf
                                             @method('DELETE')
-
                                             <a href="{{ url('tweets/' .$timeline->id .'/edit') }}" class="dropdown-item">編集</a>
                                             <button type="submit" class="dropdown-item del-btn">削除</button>
                                         </form>
                                     </div>
                                 </div>
                             @endif
-
-
                             <div class="mr-3 d-flex align-items-center">
                                 <a href="{{ url('tweets/' .$timeline->id) }}"><i class="far fa-comment fa-fw"></i></a>
                                 <p class="mb-0 text-secondary">{{ count($timeline->comments) }}</p>
@@ -111,7 +105,6 @@
                                     <form method="POST"action="{{ url('favorites/' .array_column($timeline->favorites->toArray(), 'id', 'user_id')[Auth::user()->id]) }}" class="mb-0">
                                         @csrf
                                         @method('DELETE')
-
                                         <button type="submit" class="btn p-0 border-0 text-danger"><i class="fas fa-heart fa-fw"></i></button>
                                     </form>
                                 @endif

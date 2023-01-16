@@ -3,12 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>VideoShare</title>
-
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
         <!-- Styles -->
         <style>
             html, body {
@@ -19,7 +16,6 @@
                 height: 100vh;
                 margin: 0;
             }
-
             .full-height {
                 height: 100vh;
             }
@@ -29,25 +25,20 @@
                 display: flex;
                 justify-content: center;
             }
-
             .position-ref {
                 position: relative;
             }
-
             .top-right {
                 position: absolute;
                 right: 10px;
                 top: 18px;
             }
-
             .content {
                 text-align: center;
             }
-
             .title {
                 font-size: 84px;
             }
-
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
@@ -57,7 +48,6 @@
                 text-decoration: none;
                 text-transform: uppercase;
             }
-
             .m-b-md {
                 margin-bottom: 30px;
             }
@@ -70,23 +60,18 @@
                     @auth
                         <a href="{{ url('/tweets') }}">タイムラインで動画を見つける</a>
                         <a href="{{ url('/users') }}">フォローするユーザーを見つける</a>
-                        
                     @else
                         <a href="{{ route('login') }}">ログイン</a>
-
                         @if (Route::has('register'))
                             <a href="{{ route('register') }}">新規登録</a>
                         @endif
                     @endauth
                 </div>
             @endif
-
             <div class="content">
                 <div class="title m-b-md">
                     VideoShare
                 </div>
-
-                
             </div>
         </div>
     </body>
