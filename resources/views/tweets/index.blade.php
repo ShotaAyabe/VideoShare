@@ -41,7 +41,7 @@
                                         <!--投稿日時を表示する-->    
                                             <div class="card-author text-muted">
                                                 <i class="fa fa-clock-o m-r-xs"></i>
-                                                2000/00/00
+                                                 2000/00/00
                                             </div>
                                         </div>
                                     </div>

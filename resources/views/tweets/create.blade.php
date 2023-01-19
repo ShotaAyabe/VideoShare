@@ -38,7 +38,7 @@
                             <div class="col-md-12 text-right">
                                 <p class="mb-4 text-danger">140字以内</p>
                                 <button type="submit" class="btn btn-primary">
-                                    ツイートする
+                                    動画を共有する
                                 </button>
                             </div>
                         </div>
