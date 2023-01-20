@@ -42,6 +42,7 @@
                                             <div class="card-author text-muted">
                                                 <i class="fa fa-clock-o m-r-xs"></i>
                                                  2000/00/00
+                                                 <!--投稿日時を表示したいか、共有日時を表示したいかを考える-->
                                             </div>
                                         </div>
                                     </div>
