@@ -115,10 +115,6 @@
         </div>
 </div>
 
-    
-<script src="https://text.aimaker.io/assets/js/lp/jquery-3.3.1.min.js"></script>
 
-
-    
 
 @endsection
