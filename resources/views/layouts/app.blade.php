@@ -105,12 +105,10 @@
                 @yield('content')
             </main>
         </div>
-
         <!-- Scripts -->
         <script src="https://text.aimaker.io/assets/js/lp/jquery-3.3.1.min.js"></script>
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('js/main.js') }}"></script>
-        
     </body>
     
 </html>
