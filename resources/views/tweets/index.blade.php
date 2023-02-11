@@ -2,7 +2,8 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-        
+
+
  <!--動画-->
         @if (isset($timelines))
             @foreach ($timelines as $timeline)
