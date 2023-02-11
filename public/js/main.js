@@ -62,25 +62,28 @@
         }
         return videoId;
     };
+    
     $(document).ready(function() {
         $(document)
         .on('click', '.open-player', function() {
             var buffer = 3;
             // var size = $('.video-size').val();
             var size = 'width=1280,height=720';
+            var url=$(this).attr('data-url') // + "&origin=" + location.origin; // issue参照
             var params = '';
-            params = ($(this).attr('data-url') ? 'url=' + $(this).attr('data-url') + '&' : '') + params;
+            params = (url ? 'url=' + url + '&' : '') + params;
             params = ($(this).attr('data-fname') ? 'fname=' + $(this).attr('data-fname') + '&' : '') + params;
             params = ($(this).attr('data-end') ? 'end=' + $(this).attr('data-end') + '&' : '') + params;
             params = ($(this).attr('data-start') ? 'start=' + $(this).attr('data-start') + '&' : '') + params;
             youtubePlayer.loadVideoById({
-                'videoId': getYoutubeId($(this).attr('data-url')),
+                'videoId': getYoutubeId(url),
                 'startSeconds': Number($(this).attr('data-start')) - buffer,
                 'endSeconds': Number($(this).attr('data-end')) + buffer
             });
             $('.player .iframe').show()
             .attr('data-src', '/capture-youtube?' + size.replace(',', '&') + '&' + params)
-            .attr('data-url', $(this).attr('data-url'))
+            .attr('url', url)
+
             .attr('data-fname', $(this).attr('data-fname'))
             .attr('data-start', $(this).attr('data-start'))
             .attr('data-end', $(this).attr('data-end'));
@@ -89,17 +92,13 @@
             $(this).addClass('selected');
             return false;
         })
-        
         .on('click', '.close-player', function() {
             youtubePlayer.stopVideo();
             $('.player').hide();
             $('.open-player').removeClass('selected');
             return false;
         })
-
         $(window).on('load', function() {
             $('.open-player').removeClass('disabled');
-
-
         });
     });
