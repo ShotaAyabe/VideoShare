@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
-
 <div class="container">
     <div class="row justify-content-center">
+ {{--ツイート/フォロー/フォロワー数などを表示--}}        
         <div class="col-md-8 mb-3">
             <div class="card">
                 <div class="d-inline-flex">
@@ -56,6 +56,9 @@
                 </div>
             </div>
         </div>
+        
+        
+        
         @if (isset($timelines))
             @foreach ($timelines as $timeline)
                 <div class="col-md-8 mb-3">
