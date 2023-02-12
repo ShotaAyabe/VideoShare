@@ -28,7 +28,6 @@
                                     @else
                                         <form action="/users/{{$user->id}}/follow" method="POST">
                                             {{ csrf_field() }}
-
                                             <button type="submit" class="btn btn-primary">フォローする</button>
                                         </form>
                                     @endif
@@ -56,8 +55,6 @@
                 </div>
             </div>
         </div>
-        
-        
  <!--動画-->
         @if (isset($timelines))
             @foreach ($timelines as $timeline)
