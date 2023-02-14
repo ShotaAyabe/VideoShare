@@ -13,9 +13,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             UsersTableSeeder::class,
-            TweetsTableSeeder::class,
-            CommentsTableSeeder::class,
-            FavoritesTableSeeder::class,
             FollowersTableSeeder::class,
         ]);
     }

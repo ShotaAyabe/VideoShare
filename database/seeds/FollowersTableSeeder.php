@@ -21,4 +21,4 @@ class FollowersTableSeeder extends Seeder
     }
 }
 
-/*ユーザID1を各ユーザがフォローしておく*/
+/*ユーザID1を各ユーザがフォロー*/
