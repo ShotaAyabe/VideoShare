@@ -3,31 +3,21 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-
         <title>{{ config('app.name') }}</title>
-
         <!-- Fonts -->
         <link rel="dns-prefetch" href="//fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-
-
         <link rel="stylesheet" href="https://text.aimaker.io/assets/plugins/fontawesome/css/font-awesome.css"/>
-
  {{--
         <link rel="stylesheet" href="https://text.aimaker.io/assets/css/lp/bootstrap.min.css"/>
         <link rel="stylesheet" href="https://text.aimaker.io/assets/css/customize/swiper.min.css"/>
 --}}   
-
-
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
         <link href="{{ asset('css/player.style.css') }}" rel="stylesheet">
-        
-        
         <!-- Font Awesome -->
         <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
     </head>
@@ -41,13 +31,10 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <!-- Left Side Of Navbar -->
                         <ul class="navbar-nav mr-auto">
-
                         </ul>
-
                         <!-- Right Side Of Navbar -->
                         <ul class="navbar-nav ml-auto align-items-center">
                             <!-- Authentication Links -->
@@ -61,19 +48,11 @@
                                     </li>
                                 @endif
                             @else
-                                
-
                                 <li class="nav-item mr-5">
-
-
                                     <a class="appbutton" href="{{ url('tweets') }}">タイムライン<i class="fas fa-list" class="fa-fw"></i> </a>
-            
                                     <a class="appbutton" href="{{ url('users') }}">全ユーザー<i class="fas fa-users" class="fa-fw"></i> </a>
-
-
                                     <a href="{{ url('tweets/create') }}" class="btn btn-md btn-primary">ツイートする</a>
                                 </li>
-                            
                                 <li class="nav-item">
                                     <img src="{{ Auth::user()->profile_image }}" class="rounded-circle" width="50" height="50">
                                 </li>
