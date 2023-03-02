@@ -17,9 +17,29 @@
                                 </div>
                             </div>
                             <div class="col-md-12">
+                                <label for="">共有したいYouTube動画のURLを入力してください</label>
                                 <textarea class="form-control @error('url') is-invalid @enderror" name="url" required autocomplete="url" rows="1">{{ old('url') }}</textarea>
+                                <label for="">共有メッセージを入力してください<span1>(140字以内)</span1></label>
                                 <textarea class="form-control @error('text') is-invalid @enderror" name="text" required autocomplete="text" rows="4">{{ old('text') }}</textarea>
+                                
+                                <input type="hidden" id="thumbnail" name="thumbnail" readonly/>
+                                <input type="hidden" id="title" name="title" readonly/>
+                                
+                                <label for="">情報の取得に成功すると、動画のチャンネル名が表示されます...</label>
+                                <br/>
+                                <label for="">チャンネル名:</label>
+                                <input type="text" id="author" name="author" style="border: none" readonly/>
                                 @error('text')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                @error('url')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+                                @error('title')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
                                     </span>
@@ -28,10 +48,7 @@
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-12 text-right">
-
                                 <div name="error"></div>
-                                
-                                <p class="mb-4 text-danger">140字以内</p>
                                 <button type="submit" class="btn btn-primary">
                                     動画を共有する
                                 </button>

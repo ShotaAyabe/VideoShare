@@ -59,7 +59,9 @@ class TweetsController extends Controller
         $user = auth()->user();
         $data = $request->all();
         $validator = Validator::make($data, [
-            'text' => ['required', 'string', 'max:140']
+            'text' => ['required', 'string', 'max:140'],
+            'url' => ['required', 'url', 'starts_with:https://youtu.be/,https://www.youtube.com/'],
+            'title' => ['required'] //3要素のうちの1つを参照する
         ]);
 
         $validator->validate();

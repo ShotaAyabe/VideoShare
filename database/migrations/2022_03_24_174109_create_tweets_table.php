@@ -26,7 +26,7 @@ class CreateTweetsTable extends Migration
 /*新たに動画詳細情報カラムを追加*/
             $table->string('thumbnail')->comment('サムネイル画像');
             $table->string('title')->comment('動画タイトル');
-            $table->string('channel')->comment('チャンネル名');
+            $table->string('author')->comment('チャンネル名');
             
 /*Userテーブルと外部キー接続を宣言*/
             $table->foreign('user_id')

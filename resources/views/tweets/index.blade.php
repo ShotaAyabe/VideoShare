@@ -28,20 +28,21 @@
                                     <div class="col-4 col-md-2">
                                         <!--サムネイルを表示する-->
                                         <div class="card-thumbnail">
-                                            <img src="" class="img-fluid" alt="" style="padding: 3px;">
+                                            <img src="{{ $timeline->thumbnail }}" class="img-fluid" alt="" style="padding: 3px;">
                                         </div>
                                     </div>
                                     <div class="col-8 col-md-10">
                                         <div class="card-body">
-                                         <!--タイトル-->
-                                            <h3 class="card-heading mb0" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">YouTubeテーマソング／ヒカキン＆セイキン</h3>
-                                        <!--チャンネル名を表示させたい-->
-                                            <div class="card-author text-muted" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">HikakinTV</div>
-                                        <!--投稿日時を表示する-->    
+                                            <!--タイトルを表示-->
+                                            <h3 class="card-heading mb0" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ $timeline->title }}</h3>
+                                            <!--チャンネル名を表示-->
+                                            <div class="card-author text-muted" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">{{ $timeline->author }}</div>
+<!--投稿日時を表示する--><!--削除予定-->    
                                             <div class="card-author text-muted">
                                                 <i class="fa fa-clock-o m-r-xs"></i>
                                                  2000/00/00
-                                                 <!--投稿日時を表示したいか、共有日時を表示したいかを考える-->
+                                                 <!--投稿日時-->
+                                                 
                                             </div>
                                         </div>
                                     </div>
@@ -109,8 +110,6 @@
                     <i class="fa fa-2x fa-times-circle"></i>
                 </div>
             </div>
-            <!-- なくても良さそう -->
-            <!--<div class="reclist"></div>-->
         </div>
 </div>
 @endsection
